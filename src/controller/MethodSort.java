@@ -5,6 +5,8 @@
  */
 package controller;
 
+import model.GenerateFile;
+import model.enumSortType;
 import java.io.File;
 import java.io.IOException;
 
@@ -19,9 +21,9 @@ public class MethodSort {
     
     //Constructor
     public MethodSort(enumSortType s) {
-            GenerateFile.createFileAscending(s);
-            GenerateFile.createFileDecreasing(s);
-            GenerateFile.createFileRandom(s);
+            GenerateFile.createFileAscending();
+            GenerateFile.createFileDecreasing();
+            GenerateFile.createFileRandom();
     }
     //My Functions
     //Gents and Sets

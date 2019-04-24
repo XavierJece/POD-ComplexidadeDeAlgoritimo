@@ -5,14 +5,8 @@
  */
 package view;
 
-import controller.ManipulationDirectories;
-import controller.GenerateContent;
-import controller.GenerateFile;
-import controller.enumSortType;
+import model.enumSortType;
 import controller.MethodSort;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -29,9 +23,11 @@ public class Play {
         //MethodSort stse = new MethodSort(enumSortType.SELECTIONSORT);
         //MethodSort stin = new MethodSort(enumSortType.INSERTIONSORT);
         //MethodSort stme = new MethodSort(enumSortType.MERGESORT);
-        MethodSort stqu = new MethodSort(enumSortType.QUICKSORT);
+        //MethodSort stqu = new MethodSort(enumSortType.QUICKSORT);
         //MethodSort stsh = new MethodSort(enumSortType.SHELLSORT);
         //MethodSort sthe = new MethodSort(enumSortType.HEAPSORT);
+        
+        
     }
     
 }
