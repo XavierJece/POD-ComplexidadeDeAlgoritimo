@@ -5,10 +5,17 @@
  */
 package model;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -65,8 +72,28 @@ public abstract class ManipulationDirectories{
     }
 
     
-    public static int[] readFile(String path, String name) {
-        return null;
+    public static int[] readFile(String name,int tamanho) throws IOException {
+        
+        FileReader f = new FileReader("src\\database\\" + name + ".txt");
+        BufferedReader read = new BufferedReader(f);
+        int numbers[] = new int[tamanho];
+        int i = 0;
+        
+        
+        String line = read.readLine(); // lê a primeira linha
+        // a variável "linha" recebe o valor "null" quando o processo
+        // de repetição atingir o final do arquivo texto
+        while (line != null) {
+            //System.out.printf("%s\n", linha);
+            numbers[i] = Integer.parseInt(line);
+            i++;
+            
+            line = read.readLine(); // lê da segunda até a última linha
+        }
+
+
+        
+        return numbers;
     }
     
     //Gents and Sets
