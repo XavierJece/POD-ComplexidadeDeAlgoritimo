@@ -67,11 +67,6 @@ public abstract class ManipulationDirectories{
         }
     }
     
-    public static File[] listFiles(String path) {
-        return null;
-    }
-
-    
     public static int[] readFile(String name,int tamanho) throws IOException {
         
         FileReader f = new FileReader("src\\database\\" + name + ".txt");
@@ -87,6 +82,48 @@ public abstract class ManipulationDirectories{
             //System.out.printf("%s\n", linha);
             numbers[i] = Integer.parseInt(line);
             i++;
+            
+            line = read.readLine(); // lê da segunda até a última linha
+        }
+
+
+        
+        return numbers;
+    }
+    
+    public static void createReport(String name, String content) throws IOException{
+        String path = "src\\database\\report";
+        File dir  = new File(path);
+        File f = new File(path, name + ".txt");
+        
+        
+        if(dir.exists()){
+            
+            if(!f.exists()){
+                System.out.printf("Criando arquivo: \n  " + f.getName() + "\n");
+                FileWriter fw = new FileWriter(f);
+                PrintWriter pw = new PrintWriter(fw);
+                pw.write(content);
+                pw.flush();
+                pw.close();
+                fw.close();
+            }
+        }
+    }
+    
+    public static ArrayList readReport(String name) throws IOException {
+        
+        FileReader f = new FileReader("src\\database\\report\\" + name + ".txt");
+        BufferedReader read = new BufferedReader(f);
+        
+        ArrayList numbers = new ArrayList();
+        
+        String line = read.readLine(); // lê a primeira linha
+        // a variável "linha" recebe o valor "null" quando o processo
+        // de repetição atingir o final do arquivo texto
+        while (line != null) {
+            //System.out.printf("%s\n", linha);
+            numbers.add(((Integer.parseInt(line))/ 1000));
             
             line = read.readLine(); // lê da segunda até a última linha
         }

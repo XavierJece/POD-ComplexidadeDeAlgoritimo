@@ -126,9 +126,131 @@ public abstract class GenerateFile {
         }
     }
     
-    //Gets and Sets
+    public static void createFileReport(enumSortType method, enumOrdertype order) throws IOException{
+        
+        String nameFile, content = "";
+        int  somatorio = 0, somatorioRandom = 0;
 
-    public static void createFileAscending(enumSortType s) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        for (int i = 10; i < 100; i+=10) {
+            
+            for (int j = 0; j < 10; j++) {
+                
+                if(order.getOrder().equals("Random")){
+                    
+                    for (int k = 0; k < 10; k++) {
+                        somatorioRandom += GenerateContent.runTime(method, order, i, k);
+                    }
+                    somatorio += somatorioRandom/10;
+                    System.out.println("somatorioRandom com " + i + " = " + somatorioRandom/10);
+                    somatorioRandom = 0;
+                    
+                }
+                else{
+                            
+                    somatorio += GenerateContent.runTime(method, order, i);
+                    
+                }
+            }
+            
+            content += somatorio/10   + "\r\n";
+            System.out.println("Media com " + i + " = " + somatorio/10);
+            somatorio = 0;
+           
+        }
+        
+        for (int i = 100; i < 1000; i+=100) {
+            
+            for (int j = 0; j < 10; j++) {
+                
+                if(order.getOrder().equals("Random")){
+                    
+                    for (int k = 0; k < 10; k++) {
+                        somatorioRandom += GenerateContent.runTime(method, order, i, k);
+                    }
+                    somatorio += somatorioRandom/10;
+                    System.out.println("somatorioRandom com " + i + " = " + somatorioRandom/10);
+                    somatorioRandom = 0;
+                    
+                }
+                else{
+                            
+                    somatorio += GenerateContent.runTime(method, order, i);
+                    
+                }
+            }
+            
+            content += somatorio/10   + "\r\n";
+            System.out.println("Media com " + i + " = " + somatorio/10);
+            somatorio = 0;
+           
+        }
+        
+        for (int i = 1000; i < 10000; i+=1000) {
+            
+            for (int j = 0; j < 10; j++) {
+                
+                if(order.getOrder().equals("Random")){
+                    
+                    for (int k = 0; k < 10; k++) {
+                        somatorioRandom += GenerateContent.runTime(method, order, i, k);
+                    }
+                    somatorio += somatorioRandom/10;
+                    System.out.println("somatorioRandom com " + i + " = " + somatorioRandom/10);
+                    somatorioRandom = 0;
+                }
+                else{
+                            
+                    somatorio += GenerateContent.runTime(method, order, i);
+                    
+                }
+            }
+            
+            content += somatorio/10   + "\r\n";
+            System.out.println("Media com " + i + " = " + somatorio/10);
+            somatorio = 0;
+           
+        }
+        
+        for (int i = 10000; i <= 100000; i+=10000) {
+            
+            for (int j = 0; j < 10; j++) {
+                
+                if(order.getOrder().equals("Random")){
+                    
+                    for (int k = 0; k < 10; k++) {
+                        somatorioRandom += GenerateContent.runTime(method, order, i, k);
+                    }
+                    somatorio += somatorioRandom/10;
+                    System.out.println("somatorioRandom com " + i + " = " + somatorioRandom/10);
+                    somatorioRandom = 0;
+                }
+                else{
+                            
+                    somatorio += GenerateContent.runTime(method, order, i);
+                    
+                }
+            }
+            
+            content += somatorio/10   + "\r\n";
+            System.out.println("Media com " + i + " = " + somatorio/10);
+            somatorio = 0;
+           
+        }
+        
+        nameFile = method.getAlgorithm() + "-" + order;
+        
+        try {
+            ManipulationDirectories.createReport(nameFile, content);
+        } catch (IOException ex) {
+            Logger.getLogger(GenerateFile.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+    
+    
+//Gets and Sets
+
+    
+    
+    
 }

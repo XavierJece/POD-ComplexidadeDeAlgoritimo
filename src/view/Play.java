@@ -12,8 +12,10 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import model.GenerateContent;
 import model.ManipulationDirectories;
 import model.Ordering;
+import model.enumOrdertype;
 
 /**
  *
@@ -24,7 +26,7 @@ public class Play {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
         //MethodSort stbu = new MethodSort(enumSortType.BUBBLESORT);
         //MethodSort stse = new MethodSort(enumSortType.SELECTIONSORT);
@@ -34,7 +36,7 @@ public class Play {
         //MethodSort stsh = new MethodSort(enumSortType.SHELLSORT);
         //MethodSort sthe = new MethodSort(enumSortType.HEAPSORT);
         
-        try {
+        /*try {
             //int n[] = ManipulationDirectories.readFile("Ascending_10", 10);
             //int n[] = ManipulationDirectories.readFile("Decreasing_10", 10);
             int n[] = ManipulationDirectories.readFile("Random_20-0", 20);
@@ -51,11 +53,20 @@ public class Play {
             }
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
+        }*/
+        
+        try {
+            //String time = GenerateContent.runTime(enumSortType.INSERTIONSORT, enumOrdertype.DECREASING, 500);
+            //System.out.println("Tempo de execução = " + time);
+        
+            MethodSort stin = new MethodSort(enumSortType.SELECTIONSORT);
+        
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
         }
         
-        
-        
-        
+         //new WindwonsGraphic(enumSortType.BUBBLESORT, enumOrdertype.DECREASING).setVisible(true);
+        //new WindowsInicial().setVisible(true);
     }
     
 }

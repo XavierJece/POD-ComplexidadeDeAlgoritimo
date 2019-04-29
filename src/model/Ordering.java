@@ -17,7 +17,7 @@ public class Ordering {
     //My Functions
     public static void shellsort(int[] nums) {
         
-        imprimeVetor(nums);
+        //imprimeVetor(nums);
         
         int h = 1;
         int n = nums.length;
@@ -41,13 +41,13 @@ public class Ordering {
             }
             h = h / 2;
         }
-        System.out.println("Vetor Ondenado: ");
-        imprimeVetor(nums);
+        //System.out.println("Vetor Ondenado: ");
+        //imprimeVetor(nums);
     }
     
     public static void selectionsort(int[] vetor) {
         
-        imprimeVetor(vetor);
+        //imprimeVetor(vetor);
         
         
         int n = vetor.length;
@@ -62,18 +62,18 @@ public class Ordering {
                     min = j;
                 }
             }
-            System.out.println("troca.: min.: " + vetor[min] + " com.: " + vetor[i]);
+            //System.out.println("troca.: min.: " + vetor[min] + " com.: " + vetor[i]);
             aux = vetor[min];
             vetor[min] = vetor[i];
             vetor[i] = aux;
         }    
         
-        System.out.println("\nVetor Ondenado: ");
-        imprimeVetor(vetor);
+        //System.out.println("\nVetor Ondenado: ");
+        //imprimeVetor(vetor);
     }
     
     public static void insertionsort(int[] vetor) {
-        imprimeVetor(vetor);
+        //imprimeVetor(vetor);
         
         int n = vetor.length;
         int aux, j;
@@ -85,19 +85,19 @@ public class Ordering {
             j = i - 1;
             //System.out.println("i = " + i + " > i-esimo.: " + aux);
             while(j >= 0 && aux < vetor[j]){
-                System.out.println("troca.: " + vetor[j]);
+                //System.out.println("troca.: " + vetor[j]);
                 vetor[j + 1] = vetor[j];
                 j--;
             }
             vetor[j + 1] = aux;
         }
         
-        System.out.println("\nVetor Ondenado: ");
-        imprimeVetor(vetor);
+        //System.out.println("\nVetor Ondenado: ");
+        //imprimeVetor(vetor);
     }
     
     public static void bubblesort(int[] vetor) {
-        imprimeVetor(vetor);
+        //imprimeVetor(vetor);
         
         int n = vetor.length;
         int aux;
@@ -114,8 +114,8 @@ public class Ordering {
                 }
             }
         }
-        System.out.println("\nVetor Ondenado: ");
-        imprimeVetor(vetor);
+        //System.out.println("\nVetor Ondenado: ");
+        //imprimeVetor(vetor);
     }
 
     private static class LimiteParticoes{int i; int j;}
@@ -148,7 +148,7 @@ public class Ordering {
     }
     
     public static void mergeSort(int[] vetor, int tamanho) {
-        imprimeVetor(vetor);
+        //imprimeVetor(vetor);
         
         if (tamanho < 2) {
             return;
@@ -168,8 +168,8 @@ public class Ordering {
 
         merge(vetor, l, r, mid, tamanho - mid);
         
-        System.out.println("\nVetor Ondenado: ");
-        imprimeVetor(vetor);
+        //System.out.println("\nVetor Ondenado: ");
+        //imprimeVetor(vetor);
     }
     
     private static void merge( int[] vetor, int[] l, int[] r, int left, int right) {
@@ -192,16 +192,16 @@ public class Ordering {
     }
     
     public static void quicksort(int[] v){
-        imprimeVetor(v);
+        //imprimeVetor(v);
         
         ordena(v, 0, v.length-1);
         
-        System.out.println("\nVetor Ondenado: ");
-        imprimeVetor(v);
+        //System.out.println("\nVetor Ondenado: ");
+        //imprimeVetor(v);
     }
     
     public static void heapsort(int[] v) {
-        imprimeVetor(v);
+        //imprimeVetor(v);
         
         HeapMax heap = new HeapMax(v);
         int dir = v.length-1; //int dir = n;
@@ -214,8 +214,8 @@ public class Ordering {
             heap.refaz(0, dir);
         }
         
-        System.out.println("\nVetor Ondenado: ");
-        imprimeVetor(v);
+        //System.out.println("\nVetor Ondenado: ");
+        //imprimeVetor(v);
     }
     
     public static void imprimeVetor(int[] v) {

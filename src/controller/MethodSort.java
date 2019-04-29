@@ -9,6 +9,7 @@ import model.GenerateFile;
 import model.enumSortType;
 import java.io.File;
 import java.io.IOException;
+import model.enumOrdertype;
 
 /**
  *
@@ -20,10 +21,10 @@ public class MethodSort {
     
     
     //Constructor
-    public MethodSort(enumSortType s) {
-            GenerateFile.createFileAscending();
-            GenerateFile.createFileDecreasing();
-            GenerateFile.createFileRandom();
+    public MethodSort(enumSortType s) throws IOException {
+            GenerateFile.createFileReport(s, enumOrdertype.ASCENDING);
+            GenerateFile.createFileReport(s, enumOrdertype.DECREASING);
+            GenerateFile.createFileReport(s, enumOrdertype.RANDOM);
     }
     //My Functions
     //Gents and Sets
