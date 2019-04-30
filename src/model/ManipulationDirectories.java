@@ -111,7 +111,7 @@ public abstract class ManipulationDirectories{
         }
     }
     
-    public static ArrayList readReport(String name) throws IOException {
+    public static ArrayList readReport(String name, enumSortType method) throws IOException {
         
         FileReader f = new FileReader("src\\database\\report\\" + name + ".txt");
         BufferedReader read = new BufferedReader(f);
@@ -123,7 +123,12 @@ public abstract class ManipulationDirectories{
         // de repetição atingir o final do arquivo texto
         while (line != null) {
             //System.out.printf("%s\n", linha);
-            numbers.add(((Integer.parseInt(line))/ 1000));
+            
+            if(method.getAlgorithm().equals("bublleSort") || method.getAlgorithm().equals("selectionSort") || method.getAlgorithm().equals("insertionSort")){
+               numbers.add(((Integer.parseInt(line))/ 1000)); 
+            }else{
+                numbers.add(((Integer.parseInt(line))));
+            }
             
             line = read.readLine(); // lê da segunda até a última linha
         }

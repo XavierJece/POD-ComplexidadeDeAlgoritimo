@@ -199,7 +199,7 @@ public class Ordering {
         //System.out.println("\nVetor Ondenado: ");
         //imprimeVetor(v);
     }
-    
+     
     public static void heapsort(int[] v) {
         //imprimeVetor(v);
         

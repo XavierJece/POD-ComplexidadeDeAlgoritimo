@@ -52,11 +52,18 @@ public class GenerateGraphics {
     }
     
     private static JFreeChart createChart(CategoryDataset dataSet, enumSortType method,  enumOrdertype order){
+        String leg;
+        
+        if(method.getAlgorithm().equals("bublleSort") || method.getAlgorithm().equals("selectionSort") || method.getAlgorithm().equals("insertionSort")){
+            leg = "Tempo(s)"; 
+         }else{
+            leg = "Tempo(ms)"; 
+         }
         
         JFreeChart graph = ChartFactory.createBarChart(
                 "Tempo de Execução do " + method.getAlgorithm() + " com daos " + order.getOrder(),
                 "Quantidade de Elementos", 
-                "Tempo (s)", 
+                leg, 
                 dataSet,
                 PlotOrientation.VERTICAL,
                 true,
@@ -71,7 +78,7 @@ public class GenerateGraphics {
         
         String name  = method.getAlgorithm() + "-" + order;
         
-        ArrayList times = ManipulationDirectories.readReport(name);
+        ArrayList times = ManipulationDirectories.readReport(name, method);
         
         CategoryDataset dataSet = GenerateGraphics.createDataSet(times);
         

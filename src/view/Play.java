@@ -55,7 +55,7 @@ public class Play {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }*/
         
-        try {
+        /*try {
             //String time = GenerateContent.runTime(enumSortType.INSERTIONSORT, enumOrdertype.DECREASING, 500);
             //System.out.println("Tempo de execução = " + time);
         
@@ -63,10 +63,10 @@ public class Play {
         
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
-        }
+        }*/
         
          //new WindwonsGraphic(enumSortType.BUBBLESORT, enumOrdertype.DECREASING).setVisible(true);
-        //new WindowsInicial().setVisible(true);
+        new WindowsInicial().setVisible(true);
     }
     
 }
